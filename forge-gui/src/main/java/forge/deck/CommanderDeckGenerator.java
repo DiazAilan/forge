@@ -40,10 +40,10 @@ public class CommanderDeckGenerator extends DeckProxy implements Comparable<Comm
         }
         Predicate<CardRules> canPlay = isForAi ? DeckGeneratorBase.AI_CAN_PLAY : CardRulesPredicates.IS_KEPT_IN_RANDOM_DECKS;
         return uniqueCards.toFlatList().stream()
-                .filter(format.isLegalCommanderPredicate())
-                .filter(PaperCardPredicates.fromRules(canPlay))
-                .map(legend -> new CommanderDeckGenerator(legend, format, isForAi, isCardGen))
-                .collect(Collectors.toList());
+            // .filter(format.isLegalCommanderPredicate()) // Show all cards, not just legal commanders
+            .filter(PaperCardPredicates.fromRules(canPlay))
+            .map(legend -> new CommanderDeckGenerator(legend, format, isForAi, isCardGen))
+            .collect(Collectors.toList());
     }
 
     public static List<DeckProxy> getBrawlDecks(final DeckFormat format, boolean isForAi, boolean isCardGen){

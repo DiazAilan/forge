@@ -82,6 +82,11 @@
             <artifactId>jetty-servlet</artifactId>
             <version>${jetty.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.miglayout</groupId>
+            <artifactId>miglayout-swing</artifactId>
+            <version>11.0</version>
+        </dependency>
     </dependencies>
 
 </project>

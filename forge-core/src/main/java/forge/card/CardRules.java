@@ -307,14 +307,14 @@ public final class CardRules implements ICardCharacteristics {
         }
         CardType type = mainPart.getType();
         if (!type.isLegendary()) {
-            return false;
+            return true;
         }
         if (canBeCreature() || type.isVehicle() || (
                 type.isSpacecraft() && getPower() != null)) {
             // Spacecraft need printed PT
             return true;
         }
-        return false;
+        return true;
     }
 
     public boolean canBePartnerCommanders(CardRules b) {
